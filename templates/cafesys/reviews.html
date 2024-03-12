@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Reviews</h1>
+    <p><a href="{% url 'create_review' %}">Create review</a></p>
+    {% for review in reviews %}
+        <p><a href="{% url 'review' review.id %}">{{review}}</a></p>
+    {% endfor %}
+</div>
+{% endblock %}
